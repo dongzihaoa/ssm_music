@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dzh.mapper.MusicMapper">
+
+    <resultMap id="musicMap" type="com.dzh.entity.Music">
+        <id property="musicId" column="music_id"/>
+        <result property="musicAlbumName" column="music_album_name"/>
+        <result property="musicAlbumPicurl" column="music_album_picUrl"/>
+        <result property="musicArtistName" column="music_artist_name"/>
+        <result property="musicMp3url" column="music_mp3Url"/>
+        <result property="musicName" column="music_name"/>
+        <result property="sheetId" column="sheet_id"/>
+    </resultMap>
+
+
+    <sql id="musicBase">
+        select music_id,
+               music_name,
+               music_album_name,
+               music_album_picUrl,
+               music_mp3Url,
+               music_artist_name,
+               sheet_id
+        from tb_music
+    </sql>
+    <select id="findAll" resultMap="musicMap">
+        <include refid="musicBase"/>
+    </select>
+
+    <select id="findByMusicName" resultMap="musicMap">
+        <include refid="musicBase"/>
+        <where>
+            music_name like concat('%',#{musicName},'%')
+        </where>
+    </select>
+    <select id="findById" resultMap="musicMap">
+        <include refid="musicBase"/>
+        <where>
+            music_id = #{musicId}
+        </where>
+    </select>
+
+
+</mapper>

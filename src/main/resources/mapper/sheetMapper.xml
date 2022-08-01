@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dzh.mapper.SheetMapper">
+    <resultMap id="sheetMap" type="com.dzh.entity.Sheet">
+        <id property="id" column="id"/>
+        <result property="sheetName" column="sheet_name"/>
+    </resultMap>
+
+    <sql id="sheetBase">
+        select id, sheet_name
+        from tb_sheet;
+    </sql>
+
+    <select id="findAll" resultMap="sheetMap">
+        <include refid="sheetBase"/>
+    </select>
+
+    <insert id="addSheet" >
+        insert into tb_sheet (sheet_name)
+        <trim  prefix="values (" suffix=")">
+            <if test="sheetName != null and sheetName != ''">
+                #{sheetName}
+            </if>
+        </trim>
+    </insert>
+</mapper>

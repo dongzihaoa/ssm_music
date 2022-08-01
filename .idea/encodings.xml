@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/advice/SheetAdvice.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/controller/MusicController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/controller/SheetController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/entity/Music.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/entity/Sheet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/mapper/MusicMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/mapper/SheetMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/service/MusicService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/service/SheetService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/service/impl/MusicServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/dzh/service/impl/SheetServiceImpl.java" charset="UTF-8" />
+  </component>
+</project>

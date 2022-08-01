@@ -14,7 +14,6 @@
         <result property="sheetId" column="sheet_id"/>
     </resultMap>
 
-
     <sql id="musicBase">
         select music_id,
                music_name,
@@ -41,6 +40,5 @@
             music_id = #{musicId}
         </where>
     </select>
-
 
 </mapper>

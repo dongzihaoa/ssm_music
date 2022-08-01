@@ -3,9 +3,12 @@ package com.dzh.controller;
 import com.dzh.entity.Music;
 import com.dzh.service.MusicService;
 import com.dzh.service.impl.MusicServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -53,4 +56,14 @@ public class MusicController {
         return musicService.lastSong(musicId);
     }
 
+    @RequestMapping("findPage")
+    public PageInfo<Music> findPage(
+            @RequestParam(value = "pageNum",required = false,defaultValue = "1") Integer pagNum,
+            @RequestParam(value = "pageSize",required = false,defaultValue = "2") Integer pageSize) {
+
+        PageHelper.startPage(pagNum, pageSize);
+        List<Music> all = musicService.findAll();
+
+        return new PageInfo<Music>(all);
+    }
 }

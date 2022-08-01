@@ -21,13 +21,21 @@
     <h2>网易云 Music Test</h2>
     <form action="music/findByMusicName" method="post" id="login" >
         <label>
-            <input type="text" name="musicName">
+            歌曲名&nbsp;<input type="text" name="musicName">
         </label>
-        <button  class="btn btn-outline-success"  id="a" >查询&nbsp;<span id="span"></span></button>
+        <button  class="btn btn-success"  id="a" >查询&nbsp;<span id="span"></span></button>
+        <hr>
 
     </form>
 
-    <a href="${pageContext.request.contextPath}/music/findAll" class="btn btn-outline-primary" role="button">findById01</a>
+    <form action="music/findPage" method="post">
+        <label>
+           第几页&nbsp;<input type="text" name="pageNum">
+        </label>
+        <button  class="btn btn-outline-success">分页查询&nbsp;</button>
+    </form>
+
+    <a href="${pageContext.request.contextPath}/music/findAll" class="btn btn-outline-primary" role="button">查询所有</a>
 
 
 </div>
@@ -99,9 +107,9 @@
 </script>
 
 <script type="text/javascript">
-    $(".btn").mouseup(function () {
-        $(".btn").attr("disabled","true");
-    });
+    // $(".btn").mouseup(function () {
+    //     $(".btn").attr("disabled","true");
+    // });
 
 </script>
 

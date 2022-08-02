@@ -64,6 +64,6 @@ public class MusicController {
         PageHelper.startPage(pagNum, pageSize);
         List<Music> all = musicService.findAll();
 
-        return new PageInfo<Music>(all);
+        return new PageInfo<>(all);
     }
 }
